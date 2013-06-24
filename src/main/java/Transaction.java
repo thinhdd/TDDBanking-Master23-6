@@ -27,4 +27,8 @@ public class Transaction {
     public static List<TransactionDTO> getAllTransaction(String accountNumber, long start, long end) {
         return transactionDAO.getAllTransacion(accountNumber, start,end);  //To change body of created methods use File | Settings | File Templates.
     }
+
+    public static List<TransactionDTO> getAllTransaction(String accountNumber, int count) {
+        return transactionDAO.getAllTransacion(accountNumber, count);
+    }
 }

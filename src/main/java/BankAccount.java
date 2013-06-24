@@ -52,7 +52,8 @@ public class BankAccount {
         //To change body of created methods use File | Settings | File Templates.
     }
 
-    public static void getAllTransaction(String accountNumber, int count) {
+    public static List<TransactionDTO> getAllTransaction(String accountNumber, int count) {
+        return Transaction.getAllTransaction(accountNumber, count);
         //To change body of created methods use File | Settings | File Templates.
     }
 }
