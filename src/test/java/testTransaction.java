@@ -82,4 +82,10 @@ public class testTransaction {
         assertEquals("Rut 50k", act.getValue().getDes());
         assertEquals(1000l, act.getValue().getTimeStamp());
     }
+    @Test
+    public void testGetAllTransaction()
+    {
+        BankAccount.getAllTransaction(accountNumber);
+        verify(mockTDao).getAllTransacion(accountNumber);
+    }
 }

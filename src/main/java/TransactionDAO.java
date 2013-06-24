@@ -9,4 +9,8 @@ public class TransactionDAO {
     public void save(TransactionDTO capture) {
         //To change body of created methods use File | Settings | File Templates.
     }
+
+    public void getAllTransacion(String accountNumber) {
+        //To change body of created methods use File | Settings | File Templates.
+    }
 }
