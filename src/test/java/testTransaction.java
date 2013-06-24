@@ -88,4 +88,10 @@ public class testTransaction {
         BankAccount.getAllTransaction(accountNumber);
         verify(mockTDao).getAllTransacion(accountNumber);
     }
+    @Test
+    public void testGetTransactionFilterTime()
+    {
+        BankAccount.getAllTransaction(accountNumber, 1000l, 2000l);
+        verify(mockTDao).getAllTransacion(accountNumber,1000l, 2000l);
+    }
 }
