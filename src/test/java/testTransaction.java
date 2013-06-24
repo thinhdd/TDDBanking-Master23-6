@@ -28,7 +28,7 @@ public class testTransaction {
         reset(calendar);
         BankAccount.setBankAccountDAO(mockDao);
         Transaction.setTransactionDAO(mockTDao);
-        BankAccountDTO.setCalendar(calendar);
+        TransactionDTO.setCalendar(calendar);
     }
     @Test
     public void testDeposit()

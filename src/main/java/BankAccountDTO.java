@@ -27,8 +27,4 @@ public class BankAccountDTO {
     public void setBalance(double amount) {
         this.balance = this.balance+amount;
     }
-
-    public static void setCalendar(Calendar calendar) {
-        //To change body of created methods use File | Settings | File Templates.
-    }
 }
