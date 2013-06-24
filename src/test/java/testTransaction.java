@@ -62,7 +62,7 @@ public class testTransaction {
         BankAccountDTO account = BankAccount.openAccount(accountNumber);
         when(mockDao.getAccount(accountNumber)).thenReturn(account);
         BankAccount.doDeposit(accountNumber, 100.0, "Them 100k");
-        BankAccount.doWithDraw(accountNumber, 100.0, "Them 100k");
+        BankAccount.doWithDraw(accountNumber, 50.0, "Rut 50k");
         verify(mockDao ,times(3)).save(ac.capture());
         List<BankAccountDTO> list = ac.getAllValues();
         assertEquals(accountNumber, list.get(2).getAccountNumber());

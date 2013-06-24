@@ -12,8 +12,8 @@ public class Transaction {
         //To change body of created methods use File | Settings | File Templates.
     }
 
-    public static void createTransaction(String accountNumber, double amount, String des) {
-        TransactionDTO transactionDTO = new TransactionDTO(accountNumber, amount, des);
+    public static void createTransaction(String accountNumber, double amount, String des, boolean state) {
+        TransactionDTO transactionDTO = new TransactionDTO(accountNumber, amount, des, state);
         transactionDAO.save(transactionDTO);
         //To change body of created methods use File | Settings | File Templates.
     }
