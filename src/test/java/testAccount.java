@@ -23,6 +23,7 @@ public class testAccount {
     {
         reset(mockDao);
         reset(calendar);
+        BankAccountDTO.setCalendar(calendar);
         BankAccount.setBankAccountDAO(mockDao);
     }
     @Test

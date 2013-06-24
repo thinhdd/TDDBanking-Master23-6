@@ -10,9 +10,11 @@ import java.util.Calendar;
 public class BankAccountDTO {
     String accountNumber;
     double balance;
+    long timeStamp;
+    static Calendar calendar = Calendar.getInstance();
     public BankAccountDTO(String accountNumber) {
         this.accountNumber=accountNumber;
-        this.balance=balance;
+        timeStamp=calendar.getTimeInMillis();
         //To change body of created methods use File | Settings | File Templates.
     }
 
@@ -29,6 +31,10 @@ public class BankAccountDTO {
     }
 
     public long getTimeStamp() {
-        return 0;  //To change body of created methods use File | Settings | File Templates.
+        return this.timeStamp;  //To change body of created methods use File | Settings | File Templates.
+    }
+    public static void setCalendar(Calendar calendars)
+    {
+        calendar = calendars;
     }
 }
