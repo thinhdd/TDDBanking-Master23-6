@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: thinhdd
@@ -16,5 +18,9 @@ public class Transaction {
         TransactionDTO transactionDTO = new TransactionDTO(accountNumber, amount, des, state);
         transactionDAO.save(transactionDTO);
         //To change body of created methods use File | Settings | File Templates.
+    }
+
+    public static List<TransactionDTO> getAllTransaction(String accountNumber) {
+        return transactionDAO.getAllTransacion(accountNumber);  //To change body of created methods use File | Settings | File Templates.
     }
 }

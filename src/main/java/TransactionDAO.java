@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: thinhdd
@@ -10,7 +12,8 @@ public class TransactionDAO {
         //To change body of created methods use File | Settings | File Templates.
     }
 
-    public void getAllTransacion(String accountNumber) {
+    public List<TransactionDTO> getAllTransacion(String accountNumber) {
+        return null;
         //To change body of created methods use File | Settings | File Templates.
     }
 }
