@@ -51,4 +51,8 @@ public class BankAccount {
         return Transaction.getAllTransaction(accountNumber,start, end);
         //To change body of created methods use File | Settings | File Templates.
     }
+
+    public static void getAllTransaction(String accountNumber, int count) {
+        //To change body of created methods use File | Settings | File Templates.
+    }
 }
