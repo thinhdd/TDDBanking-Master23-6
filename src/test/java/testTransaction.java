@@ -1,10 +1,11 @@
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.ArgumentCaptor;
+
+import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.reset;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,10 +29,13 @@ public class testTransaction {
     @Test
     public void testDeposit()
     {
+        ArgumentCaptor<BankAccountDTO> ac = ArgumentCaptor.forClass(BankAccountDTO.class);
         BankAccountDTO account = BankAccount.openAccount(accountNumber);
         when(mockDao.getAccount(accountNumber)).thenReturn(account);
         BankAccount.doDeposit(accountNumber, 100.0, "Them 100k");
-        assertEquals(accountNumber, account.getAccountNumber());
-        assertEquals(100.0, account.getBalance());
+        verify(mockDao ,times(2)).save(ac.capture());
+        List<BankAccountDTO> list = ac.getAllValues();
+        assertEquals(accountNumber, list.get(1).getAccountNumber());
+        assertEquals(100.0, list.get(1).balance);
     }
 }
