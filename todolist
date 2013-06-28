@@ -1,0 +1,5 @@
+1, Test mở một tài khoản không tồn tại trong csdl
+2, Test mở một tài khoản đã tồn tại trong csdl và đẩy ra một exception.
+3, Test lấy một account tồn tại thuộc cơ sở dữ liệu
+4, Test lấy một account không tồn tại trong cơ sở dữ liệu
+5, Test
