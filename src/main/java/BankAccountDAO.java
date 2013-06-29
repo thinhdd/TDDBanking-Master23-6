@@ -1,3 +1,5 @@
+import javax.sql.DataSource;
+
 /**
  * Created with IntelliJ IDEA.
  * User: thinhdd
@@ -6,6 +8,10 @@
  * To change this template use File | Settings | File Templates.
  */
 public class BankAccountDAO {
+    public BankAccountDAO(DataSource dataSource) {
+        //To change body of created methods use File | Settings | File Templates.
+    }
+
     public void save(BankAccountDTO account) {
         //To change body of created methods use File | Settings | File Templates.
     }
