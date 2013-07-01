@@ -1,3 +1,4 @@
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -22,11 +23,11 @@ public class BankAccount {
     }
 
 
-    public static BankAccountDTO getAccount(String accountNumber) {
+    public static BankAccountDTO getAccount(String accountNumber) throws SQLException {
         return bankAccountDAO.getAccount(accountNumber);  //To change body of created methods use File | Settings | File Templates.
     }
 
-    public static void doDeposit(String accountNumber, double amount, String des) {
+    public static void doDeposit(String accountNumber, double amount, String des) throws SQLException {
         BankAccountDTO account = bankAccountDAO.getAccount(accountNumber);
         Transaction.createTransaction(accountNumber,amount,des, true);
         account.setBalance(amount);
@@ -34,7 +35,7 @@ public class BankAccount {
         //To change body of created methods use File | Settings | File Templates.
     }
 
-    public static void doWithDraw(String accountNumber, double amount, String des) {
+    public static void doWithDraw(String accountNumber, double amount, String des) throws SQLException {
         BankAccountDTO account = bankAccountDAO.getAccount(accountNumber);
         Transaction.createTransaction(accountNumber,amount,des, false);
         account.setBalance(-amount);

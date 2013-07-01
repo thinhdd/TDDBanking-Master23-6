@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 
+import java.sql.SQLException;
 import java.util.Calendar;
 
 import static junit.framework.Assert.assertEquals;
@@ -36,8 +37,7 @@ public class testAccount {
         assertEquals(0.0, ac.getValue().getBalance());
     }
     @Test
-    public void testGetAccount()
-    {
+    public void testGetAccount() throws SQLException {
         BankAccountDTO account = new BankAccountDTO(accountNumber);
         when(mockDao.getAccount(accountNumber)).thenReturn(account);
         BankAccountDTO accountResult = BankAccount.getAccount(accountNumber);

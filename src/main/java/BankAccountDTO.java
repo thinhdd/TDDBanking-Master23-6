@@ -1,3 +1,4 @@
+import java.sql.ResultSet;
 import java.util.Calendar;
 
 /**
@@ -36,5 +37,10 @@ public class BankAccountDTO {
     public static void setCalendar(Calendar calendars)
     {
         calendar = calendars;
+    }
+
+    public void setTimeStamp(long resultSet) {
+        this.timeStamp=resultSet;
+        //To change body of created methods use File | Settings | File Templates.
     }
 }

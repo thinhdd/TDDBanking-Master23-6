@@ -11,6 +11,7 @@ import org.junit.Test;
 
 import javax.sql.DataSource;
 import java.nio.charset.Charset;
+import java.sql.SQLException;
 
 import static junit.framework.Assert.assertEquals;
 
@@ -22,7 +23,7 @@ import static junit.framework.Assert.assertEquals;
  * To change this template use File | Settings | File Templates.
  */
 public class TestDAO {
-    public final String accountNumber="12345678";
+    public final String accountNumber="0123456789";
     private static final String JDBC_DRIVER = org.h2.Driver.class.getName();
     private static final String JDBC_URL = "jdbc:h2:mem:test;DB_CLOSE_DELAY=-1";
     private static final String USER = "sa";
@@ -59,8 +60,7 @@ public class TestDAO {
         return dataSource;
     }
     @Test
-    public void testGetAccountAxist()
-    {
+    public void testGetAccountAxist() throws SQLException {
 
         BankAccountDAO bankAccountDAO = new BankAccountDAO(dataSource());
         BankAccountDTO account = bankAccountDAO.getAccount(accountNumber);

@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 
+import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.List;
 
@@ -31,8 +32,7 @@ public class testTransaction {
         TransactionDTO.setCalendar(calendar);
     }
     @Test
-    public void testDeposit()
-    {
+    public void testDeposit() throws SQLException {
         ArgumentCaptor<BankAccountDTO> ac = ArgumentCaptor.forClass(BankAccountDTO.class);
         BankAccountDTO account = BankAccount.openAccount(accountNumber);
         when(mockDao.getAccount(accountNumber)).thenReturn(account);
@@ -43,8 +43,7 @@ public class testTransaction {
         assertEquals(100.0, list.get(1).balance);
     }
     @Test
-    public void testSaveDeposit()
-    {
+    public void testSaveDeposit() throws SQLException {
         ArgumentCaptor<TransactionDTO> act = ArgumentCaptor.forClass(TransactionDTO.class);
         BankAccountDTO account = BankAccount.openAccount(accountNumber);
         when(mockDao.getAccount(accountNumber)).thenReturn(account);
@@ -57,7 +56,7 @@ public class testTransaction {
         assertEquals(1000l, act.getValue().getTimeStamp());
     }
     @Test
-    public void testWithDraw(){
+    public void testWithDraw() throws SQLException {
         ArgumentCaptor<BankAccountDTO> ac = ArgumentCaptor.forClass(BankAccountDTO.class);
         BankAccountDTO account = BankAccount.openAccount(accountNumber);
         when(mockDao.getAccount(accountNumber)).thenReturn(account);
@@ -69,8 +68,7 @@ public class testTransaction {
         assertEquals(50.0, list.get(2).balance);
     }
     @Test
-    public void testWithDrawSave()
-    {
+    public void testWithDrawSave() throws SQLException {
         ArgumentCaptor<TransactionDTO> act = ArgumentCaptor.forClass(TransactionDTO.class);
         BankAccountDTO account = BankAccount.openAccount(accountNumber);
         when(mockDao.getAccount(accountNumber)).thenReturn(account);
