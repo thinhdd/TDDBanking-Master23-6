@@ -14,6 +14,7 @@ import java.nio.charset.Charset;
 import java.sql.SQLException;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertTrue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -66,5 +67,11 @@ public class TestDAO {
         BankAccountDTO account = bankAccountDAO.getAccount(accountNumber);
         assertEquals(accountNumber, account.getAccountNumber());
         assertEquals(0.0, account.getBalance());
+    }
+    @Test
+    public void testGetAccountNotExist() throws SQLException{
+        BankAccountDAO bankAccountDAO = new BankAccountDAO(dataSource());
+        BankAccountDTO account = bankAccountDAO.getAccount("123");
+        assertTrue(!(account==null));
     }
 }
