@@ -72,6 +72,6 @@ public class TestDAO {
     public void testGetAccountNotExist() throws SQLException{
         BankAccountDAO bankAccountDAO = new BankAccountDAO(dataSource());
         BankAccountDTO account = bankAccountDAO.getAccount("123");
-        assertTrue(!(account==null));
+        assertTrue(account==null);
     }
 }
